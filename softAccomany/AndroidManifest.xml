@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.android_robot_01"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+ <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- 使用junit需要添加 -->
+        <uses-library android:name="android.test.runner" />
+        <!--  -->
+
+        <activity
+            android:name="com.example.android_robot_01.MainActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan|stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        
+        <activity
+            android:name="com.example.softAccomany.mark.NotificationView"
+            android:label="Details of notification" >
+            <intent-filter >
+                <action android:name="com.example.softAccomany.mark.intent.action.NotificationView"/>
+            </intent-filter>
+        </activity>
+        
+        
+        <activity android:name="com.example.softAccomany.chat.Activity1">
+            <intent-filter >
+                <action android:name="com.example.softAccomany.chat.intent.action.Aty1"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            
+        </activity>
+        
+        <activity android:name="com.example.softAccomany.mark.Activity2">
+            <intent-filter >
+                <action android:name="com.example.softAccomany.mark.intent.action.Activity2"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+    
+			         
+                     
+                                           <!-- 任务注册 -->
+                <activity android:name="com.example.softAccomany.mark.DeuList"></activity>
+                <activity android:name="com.example.softAccomany.mark.DeuTypeList"></activity>
+                <activity android:name="com.example.softAccomany.mark.Add"></activity>
+                
+                <activity android:name="com.example.softAccomany.mark.Alarmalert"
+                          android:excludeFromRecents="true" android:theme="@android:style/Theme.NoDisplay"
+			              android:launchMode="singleTask" android:taskAffinity=":AlarmAlert"
+			              android:screenOrientation="nosensor"
+			              android:configChanges="orientation|keyboardHidden|keyboard|navigation"/>
+                
+                	    
+               
+            	
+               
+            
+                <activity android:name="com.example.softAccomany.mark.Alarmalert2"
+                          android:excludeFromRecents="true" android:theme="@android:style/Theme.Dialog"
+			              android:launchMode="singleTask" android:taskAffinity=":AlarmAlert"
+			              android:screenOrientation="nosensor"
+			              android:configChanges="orientation|keyboardHidden|keyboard|navigation"
+                />
+                
+                
+                <activity android:name="com.example.softAccomany.mark.Edit"></activity>
+                <activity android:name="com.example.softAccomany.mark.History" android:label="@string/history"></activity>
+                <activity android:name="com.example.softAccomany.mark.Schedual"></activity>
+                <activity android:name="com.example.softAccomany.mark.Setting"></activity>
+                
+                                     <!-- 注册receiver CallAlarm -->
+                <receiver android:name="com.example.softAccomany.mark.CallAlarm">
+                    <intent-filter>
+                        <action android:name="addAction"/>
+                    </intent-filter>
+                </receiver>
+                <receiver android:name="com.example.softAccomany.mark.CallAlarm1">
+                    <intent-filter>
+                        <action android:name="editAction"/>
+                    </intent-filter>
+                </receiver>
+                 <receiver android:name="com.example.softAccomany.mark.CallAlarm2">
+                    <intent-filter>
+                        <action android:name="addAction"/>
+                    </intent-filter>
+                </receiver> 
+
+                 
+                 <!-- 新手引导 -->
+        <activity
+            android:name="com.example.softAccomary.guide.WeixinChatDemoActivity" >
+            <intent-filter>
+                <action android:name="com.example.softAccomary.guide.intent.action.zhidao" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            
+        </activity>
+        
+        <activity 
+            android:name="com.example.softAccomary.guide.WeixinChatDemoActivity2" >
+            
+            
+        </activity>
+                 <activity android:name="StartShow">
+                  <intent-filter >
+                      <action android:name="com.example.android_robot_01.intent.action.StartShow"/>
+                      <category android:name="android.intent.category.DEFAULT"/>
+                  </intent-filter>   
+        </activity>
+                 <activity android:name="ShouYe">
+                      <intent-filter >
+                      <action android:name="com.example.android_robot_01.intent.action.ShouYe"/>
+                      <category android:name="android.intent.category.DEFAULT"/>
+                  </intent-filter>   
+                 </activity>
+                 
+    </application>
+  <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
+ 
+ 
+    <!-- 使用junit需要添加 -->
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:label="Test for My app"
+        android:targetPackage="com.example.android_robot_01" >
+    </instrumentation>
+    <!--  -->
+
+</manifest>
